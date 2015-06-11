@@ -1,0 +1,6 @@
+#!/usr/bin/env turtle
+
+import Turtle
+
+main = do
+  sleep 10

@@ -1,0 +1,5 @@
+#!/usr/bin/env turtle
+
+import Turtle
+
+main = echo "Hello, turtles!"

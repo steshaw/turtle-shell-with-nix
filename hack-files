@@ -1,0 +1,48 @@
+#!/usr/bin/env turtle
+
+import Turtle
+import qualified Control.Foldl as FL
+import System.Exit (exitWith)
+
+_exit 0 = exitWith ExitSuccess
+_exit n = exitWith (ExitFailure n)
+
+--
+-- Adapted from http://www.haskellforall.com/2015/01/use-haskell-for-shell-scripting.html
+--
+
+main = do
+  -- Create some dirs/files.
+  cd "/tmp"
+  mkdir "test"
+  output "test/foo" "Hello, world!"
+
+  -- Output contents.
+  echo "Contents of test/foo:"
+  stdout $ input "test/foo"
+  sleep 1
+
+  -- List directory.
+  echo "ls /tmp/test"
+  view $ lstree "/tmp/test"
+
+  -- Clean up.
+  rm "test/foo"
+  rmdir "test"
+  sleep 1
+
+  echo "Files in ."
+  view $ ls "."
+  echo ""
+
+  echo "Files in /tmp"
+  view $ ls "/tmp"
+  echo ""
+
+  size1 <- fold (ls ".") FL.length
+  putStrLn $ "#files in . = " ++ (show size1)
+
+  size2 <- fold (ls "/tmp") FL.length
+  putStrLn $ "#files in /tmp = " ++ (show size2)
+
+  _exit 0
