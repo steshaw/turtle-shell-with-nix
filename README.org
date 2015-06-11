@@ -1,6 +1,7 @@
-* Using Turtle Shell with Nix
+* Trying Turtle shell with Nix
 
 Using a simple wrapper script called =turtle= allows your Turtle shell programs to execute with a simple shebang. [[http://nixos.org/nix][Nix]] will take care of installing the necessary dependencies if you don't have them already.
+
 
 ** Put turtle onto your PATH
 
@@ -8,12 +9,14 @@ Using a simple wrapper script called =turtle= allows your Turtle shell programs 
 $ source bin/env
 #+end_src
 
-** Execute example Turtle scripts
+
+** Execute example Turtle shell scripts
 
 #+begin_src shellsession
 $ examples/hello-turtle
 Turtle
 #+end_src
+
 
 ** Example Turtle shell script with simple shebang
 
@@ -22,6 +25,7 @@ Turtle
 
 main = echo "Hello, Turtle!"
 #+end_src
+
 
 ** References
 
