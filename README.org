@@ -9,6 +9,12 @@ Using a simple wrapper script called =turtle= allows your Turtle shell programs 
 $ source bin/env
 #+end_src
 
+or simply:
+
+#+begin_src shellsession
+$ PATH=$PWD/bin:$PATH
+#+end_src
+
 
 ** Execute example Turtle shell scripts
 
