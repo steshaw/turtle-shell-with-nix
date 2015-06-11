@@ -4,4 +4,6 @@ set -eu
 
 command="runhaskell -XOverloadedStrings $@"
 
-exec nix-shell --command "${command}"
+dir=$(dirname $0)
+
+exec nix-shell --command "${command}" ${dir}/shell.nix
