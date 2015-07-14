@@ -1,0 +1,8 @@
+#!/usr/bin/env turtle
+
+import Turtle
+import Data.Text (intercalate)
+
+main = do
+  args <- arguments
+  echo $ intercalate " " args
