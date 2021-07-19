@@ -15,6 +15,12 @@ or simply:
 $ PATH=$PWD/scripts:$PATH
 #+end_src
 
+or use [[https://direnv.net/][direnv]]:
+
+#+begin_src sh-session
+$ direnv allow
+#+end_src
+
 
 ** Execute example Turtle shell scripts
 
