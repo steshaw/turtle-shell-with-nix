@@ -6,13 +6,13 @@ Using a simple wrapper script called =turtle= allows your Turtle shell programs 
 ** Put turtle onto your PATH
 
 #+begin_src shellsession
-$ source bin/env
+$ source scripts/env
 #+end_src
 
 or simply:
 
 #+begin_src shellsession
-$ PATH=$PWD/bin:$PATH
+$ PATH=$PWD/scripts:$PATH
 #+end_src
 
 
