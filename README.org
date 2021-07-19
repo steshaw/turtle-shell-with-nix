@@ -5,20 +5,20 @@ Using a simple wrapper script called =turtle= allows your Turtle shell programs 
 
 ** Put turtle onto your PATH
 
-#+begin_src shellsession
+#+begin_src sh-session
 $ source scripts/env
 #+end_src
 
 or simply:
 
-#+begin_src shellsession
+#+begin_src sh-session
 $ PATH=$PWD/scripts:$PATH
 #+end_src
 
 
 ** Execute example Turtle shell scripts
 
-#+begin_src shellsession
+#+begin_src sh-session
 $ examples/hello-turtle
 Turtle
 #+end_src
@@ -26,7 +26,7 @@ Turtle
 
 ** a Turtle shell script with simple shebang
 
-#+begin_src Haskell
+#+begin_src haskell
 #!/usr/bin/env turtle
 
 main = echo "Hello, Turtle!"
