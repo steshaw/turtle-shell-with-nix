@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
-set -eu
+set -euo pipefail
 
-command="runhaskell -XOverloadedStrings $@"
+command="runhaskell -XOverloadedStrings $*"
 
-dir=$(dirname $0)
+dir=$(dirname "$0")
 
-exec nix-shell --command "${command}" ${dir}/shell.nix
+if [[ -n ${IN_NIX_SHELL:-} ]]; then
+  # Already in nix-shell.
+  $command
+else
+  # Run the command inside a nix-shell.
+  exec nix-shell --command "${command}" "${dir}/shell.nix"
+fi
